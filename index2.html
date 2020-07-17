@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		input{
+			height:50px;
+			width: 100px;
+			margin-left: 10px;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	 var ar = [3];
+	 var index=0;
+	 var total=0;
+	 var color = ["orange","violet","yellow","aqua","Acid green"];
+	 var colorIndex=0;
+	 function myFunction(val) {
+	 	// body...
+	 	ar[index++]=val;
+	 	if(index==2){
+	 		total = parseInt(ar[0])+parseInt(ar[1]);
+	 		index=0;
+	 		console.log(colorIndex);
+	 		$('ol').append('<input style="background-color:'+color[colorIndex%5]+';" type="button" value="'+total+'" onclick="myFunction(this.value)">');
+	 		colorIndex++;
+	 	}
+	 }
+	</script>
+	<title></title>
+</head>
+<body>
+	<ol>
+		<input type="button" value="1" style="background-color: red" onclick="myFunction(this.value)">
+		<input type="button" value="2" style="background-color: blue" onclick="myFunction(this.value)">
+	</ol>
+</body>
+</html>
